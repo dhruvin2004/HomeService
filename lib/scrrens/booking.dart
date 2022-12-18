@@ -24,14 +24,14 @@ class _BookingState extends State<Booking> {
     _selectedDate = DateTime.now().add(const Duration(days: 2));
   }
 
-
-  int _index = 0;
+  //
+  // int _index = 0;
 
   @override
   Widget build(BuildContext context) {
-    int index = ModalRoute.of(context)?.settings.arguments as int;
-    double h = MediaQuery.of(context).size.height;
-    double w = MediaQuery.of(context).size.width;
+    //int index = ModalRoute.of(context)?.settings.arguments as int;
+    // double h = MediaQuery.of(context).size.height;
+    // double w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Booking"),
