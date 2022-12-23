@@ -36,11 +36,16 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         leadingWidth: 30,
         elevation: 0,
-        title: Text(
-          titleName[currentIndex],
-          style: const TextStyle(
-              fontFamily: 'Poppins', fontWeight: FontWeight.bold),
-        ),
+        title: (page[currentIndex] == page[0])
+            ? Image.asset(
+                'image/logo/logo2.png',
+                height: 30,
+              )
+            : Text(
+                titleName[currentIndex],
+                style: const TextStyle(
+                    fontFamily: 'Poppins', fontWeight: FontWeight.bold),
+              ),
       ),
       body: page[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -52,8 +57,12 @@ class _HomePageState extends State<HomePage> {
           });
         },
         items: [
-          const BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Image.asset(
+                'image/logo/homelogo.png',
+                height: 25,
+              ),
+              label: "Home"),
           const BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.calendar_today),
             label: "Order",

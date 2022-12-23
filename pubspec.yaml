@@ -82,6 +82,7 @@ flutter:
     - image/
     - image/main/
     - image/serPro/
+    - image/logo/
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

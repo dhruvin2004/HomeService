@@ -105,16 +105,16 @@ class _ContactUsState extends State<ContactUs> {
               child: CircleAvatar(
                 radius: 80,
                 backgroundColor: Colors.grey.shade300,
-                child: FlutterLogo(
-                  size: 120,
-                ),
-              ),
+                child: Image.asset(
+                    "image/logo/homelogo.png",
+                    height: 110,
+                  )),
             ),
             SizedBox(
               height: 20,
             ),
             Text(
-              "We are always ready to cooperate.\nWrite to us & we will contact you.",
+              "●  We are always ready to cooperate.\n      Write to us & we will contact you.",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
             SizedBox(

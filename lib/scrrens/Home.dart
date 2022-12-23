@@ -320,12 +320,13 @@ class _MonthlyServiceState extends State<MonthlyService> {
                 .map((e) => GestureDetector(
                       onTap: () {
                         setState(() {
-                          i = Global.category.indexOf(e);
                           if (selectedService == Global.category.indexOf(e)) {
                             selectedService = -1;
                           } else {
                             selectedService = Global.category.indexOf(e);
                           }
+                          Navigator.of(context).pushNamed("subCategory",
+                              arguments: Global.category.indexOf(e));
                         });
                       },
                       child: Padding(

@@ -28,9 +28,14 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: FlutterLogo(size: 100),
+    return Scaffold(
+      body: Container(
+        color: Colors.white,
+        child: Center(
+            child: Image.asset(
+          "image/logo/33.png",
+          height: 300,
+        )),
       ),
     );
   }

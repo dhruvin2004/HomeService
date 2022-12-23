@@ -15,27 +15,12 @@ class Account extends StatefulWidget {
 class _AccountState extends State<Account> {
   //--------------------------------
   final user = FirebaseAuth.instance.currentUser!;
-  final _dialog = RatingDialog(
-    initialRating: 1.2,
-    title: const Text(
-      'Rating Dialog',
-      textAlign: TextAlign.center,
-      style: TextStyle(
-        fontSize: 25,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
-    message: const Text(
-      'Tap a star to set your rating. Add more description here if you want.',
-      textAlign: TextAlign.center,
-      style: TextStyle(fontSize: 15),
-    ),
-    image: const FlutterLogo(size: 100),
-    submitButtonText: 'Submit',
-    commentHint: 'Set your custom comment hint',
-    onCancelled: () => print('cancelled'),
-    onSubmitted: (response) {},
-  );
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -144,7 +129,7 @@ class _AccountState extends State<Account> {
                   context: context,
                   barrierDismissible: true,
                   // set to false if you want to force a rating
-                  builder: (context) => _dialog,
+                  builder: (context) => FeedBack(),
                 );
               });
             }),
@@ -209,6 +194,47 @@ class _AccountState extends State<Account> {
           },
         ),
       ],
+    );
+  }
+}
+
+class FeedBack extends StatefulWidget {
+  const FeedBack({Key? key}) : super(key: key);
+
+  @override
+  State<FeedBack> createState() => _FeedBackState();
+}
+
+class _FeedBackState extends State<FeedBack> {
+  @override
+  Widget build(BuildContext context) {
+    return RatingDialog(
+      initialRating: 0.8,
+      title: const Text(
+        'Home Service App',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      message: const Text(
+        'Tap a star to set your rating. Add more description here if you want.',
+        textAlign: TextAlign.center,
+        style: TextStyle(fontSize: 15),
+      ),
+      image: CircleAvatar(
+        radius: 65,
+        backgroundColor: Colors.white,
+        child: Image.asset(
+          "image/logo/homelogo.png",
+          height: 100,
+        ),
+      ),
+      submitButtonText: 'Submit',
+      commentHint: 'Set your custom comment hint',
+      onCancelled: () => print('cancelled'),
+      onSubmitted: (response) {},
     );
   }
 }
