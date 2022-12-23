@@ -74,7 +74,6 @@ class _MyAppState extends State<MyApp> {
         'profile': (context) => const ProfileEdit(),
         'help': (context) => const HelpCenter(),
         'order': (context) => const orderDone(),
-        'details': (context) => const Details(),
         'contact': (context) => const ContactUs(),
       },
       debugShowCheckedModeBanner: false,

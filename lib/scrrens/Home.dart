@@ -8,6 +8,7 @@ import 'package:home_service/scrrens/variable.dart';
 import '../Admin/crud.dart';
 import '../Admin/edit.dart';
 import '../util/widget.dart';
+import 'details.dart';
 import 'homePage.dart';
 
 class Home extends StatefulWidget {
@@ -188,7 +189,21 @@ class _HomeState extends State<Home> {
                     children: snapshot.data!.docs.map((e) {
                       return GestureDetector(
                         onTap: () {
-                          setState(() {});
+                          setState(() {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Details(
+                                  image: e['SerImage'],
+                                  name: e['Name'],
+                                  category: e['Category'],
+                                  experiance: e['Experience'],
+                                  rate: e['Rating'],
+                                  price: e['Price'],
+                                ),
+                              ),
+                            );
+                          });
                         },
                         child: AnimatedContainer(
                           height: 120,

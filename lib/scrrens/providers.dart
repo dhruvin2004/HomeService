@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_service/scrrens/variable.dart';
+import 'package:home_service/util/my_button.dart';
+
+import 'booking.dart';
 
 class Provider extends StatefulWidget {
   const Provider({Key? key}) : super(key: key);
@@ -162,25 +165,14 @@ class _ProviderState extends State<Provider> {
                               const SizedBox(
                                 height: 10,
                               ),
-                              GestureDetector(
+                              MyButton(
+                                text: "Book Now",
                                 onTap: () {
                                   Navigator.pushNamed(context, 'booking',
                                       arguments:
                                           Global.serviceProvider.indexOf(e));
                                 },
-                                child: Container(
-                                  height: h / 15,
-                                  width: w / 1.2,
-                                  decoration: BoxDecoration(
-                                      color: Colors.black,
-                                      borderRadius: BorderRadius.circular(30)),
-                                  alignment: Alignment.center,
-                                  child: const Text(
-                                    "Book now",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ),
-                              )
+                              ),
                             ],
                           ),
                         ),
