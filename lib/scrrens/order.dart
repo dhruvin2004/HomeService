@@ -52,50 +52,6 @@ class _OrderState extends State<Order> {
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  SizedBox(
-                                    width: w - 320,
-                                  ),
-                                  GestureDetector(
-                                      onTap: () {
-                                        setState(() {
-                                          showDialog(
-                                              context: context,
-                                              builder: (context) {
-                                                return CupertinoAlertDialog(
-                                                  title: const Text(
-                                                      "Are you sure for cancel order?"),
-                                                  insetAnimationCurve:
-                                                      Curves.linear,
-                                                  actions: [
-                                                    CupertinoButton(
-                                                      onPressed: () {
-                                                        setState(() {
-                                                          Global.myOrder
-                                                              .remove(e);
-                                                          Navigator.pop(
-                                                              context);
-                                                        });
-                                                      },
-                                                      child: const Text("Yes"),
-                                                    ),
-                                                    CupertinoButton(
-                                                      onPressed: () {
-                                                        setState(() {
-                                                          Navigator.pop(
-                                                              context);
-                                                        });
-                                                      },
-                                                      child: const Text("No"),
-                                                    ),
-                                                  ],
-                                                );
-                                              });
-                                        });
-                                      },
-                                      child: Icon(
-                                        Icons.cancel,
-                                        color: Colors.red,
-                                      ))
                                 ],
                               ),
                               SizedBox(
