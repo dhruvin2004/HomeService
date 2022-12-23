@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:home_service/scrrens/variable.dart';
 
 class Order extends StatefulWidget {
   const Order({Key? key}) : super(key: key);
@@ -10,6 +12,118 @@ class Order extends StatefulWidget {
 class _OrderState extends State<Order> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
+    return (Global.myOrder.isEmpty)
+        ? Center(
+            child: Text("You don't have any order yet"),
+          )
+        : ListView(
+            padding: EdgeInsets.all(16),
+            children: [
+              ...Global.myOrder
+                  .map(
+                    (e) => Container(
+                      height: 150,
+                      width: w,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          color: Colors.grey.shade200,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 50,
+                            backgroundColor: Colors.grey,
+                            backgroundImage: AssetImage(e['image']),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Spacer(),
+                              Row(
+                                children: [
+                                  Text(
+                                    e['name'],
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  SizedBox(
+                                    width: w - 320,
+                                  ),
+                                  GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          showDialog(
+                                              context: context,
+                                              builder: (context) {
+                                                return CupertinoAlertDialog(
+                                                  title: const Text(
+                                                      "Are you sure for cancel order?"),
+                                                  insetAnimationCurve:
+                                                      Curves.linear,
+                                                  actions: [
+                                                    CupertinoButton(
+                                                      onPressed: () {
+                                                        setState(() {
+                                                          Global.myOrder
+                                                              .remove(e);
+                                                          Navigator.pop(
+                                                              context);
+                                                        });
+                                                      },
+                                                      child: const Text("Yes"),
+                                                    ),
+                                                    CupertinoButton(
+                                                      onPressed: () {
+                                                        setState(() {
+                                                          Navigator.pop(
+                                                              context);
+                                                        });
+                                                      },
+                                                      child: const Text("No"),
+                                                    ),
+                                                  ],
+                                                );
+                                              });
+                                        });
+                                      },
+                                      child: Icon(
+                                        Icons.cancel,
+                                        color: Colors.red,
+                                      ))
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                e['service'],
+                                style: TextStyle(
+                                    color: Colors.grey.shade400, fontSize: 16),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                "₹ ${e['charge'].toString()}",
+                                style: TextStyle(
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Spacer(),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                  .toList()
+            ],
+          );
   }
 }

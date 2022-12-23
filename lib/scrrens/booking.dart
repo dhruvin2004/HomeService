@@ -11,6 +11,7 @@ class Booking extends StatefulWidget {
 
 class _BookingState extends State<Booking> {
   late DateTime _selectedDate;
+
   @override
   void initState() {
     super.initState();
@@ -140,8 +141,16 @@ class _BookingState extends State<Booking> {
                               }
                             } else {
                               if (currentStep < 2) currentStep++;
-                              Navigator.pushNamed(context, 'order');
+                              Navigator.pushNamed(
+                                context,
+                                'order',
+                              );
+                              Global.myOrder.add(
+                                Global.serviceProvider[index],
+                              );
+
                               //orderService.add
+
                             }
                           });
                         },
@@ -596,8 +605,8 @@ class _BookingState extends State<Booking> {
                                   letterSpacing: 0.5,
                                 ),
                               ),
-                              const Text(
-                                "Rs.560/-",
+                              Text(
+                                "₹ ${Global.serviceProvider[index]['charge'].toString()}",
                                 style: TextStyle(
                                   color: Colors.red,
                                   fontSize: 18,

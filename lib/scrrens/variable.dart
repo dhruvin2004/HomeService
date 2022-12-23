@@ -342,7 +342,7 @@ class Global {
           'Contrary to popular belief, Lorem Ipsum is not simply random text. '
               'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
       'rate': '4 ⭐',
-      'charge': 10,
+      'charge': 500,
     },
     {
       'name': 'Edward Cisneros',
@@ -352,7 +352,7 @@ class Global {
           'Contrary to popular belief, Lorem Ipsum is not simply random text. '
               'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
       'rate': '4 ⭐',
-      'charge': 10,
+      'charge': 650,
     },
     {
       'name': 'Edward Cisneros',
@@ -362,7 +362,7 @@ class Global {
           'Contrary to popular belief, Lorem Ipsum is not simply random text. '
               'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
       'rate': '4 ⭐',
-      'charge': 10,
+      'charge': 550,
     },
     {
       'name': 'Gian Cesco n',
@@ -372,7 +372,7 @@ class Global {
           'Contrary to popular belief, Lorem Ipsum is not simply random text. '
               'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
       'rate': '4 ⭐',
-      'charge': 10,
+      'charge': 700,
     },
     {
       'name': 'Rian Robert',
@@ -382,7 +382,7 @@ class Global {
           'Contrary to popular belief, Lorem Ipsum is not simply random text. '
               'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
       'rate': '4 ⭐',
-      'charge': 10,
+      'charge': 1000,
     },
     {
       'name': 'Vince Vera s',
@@ -392,7 +392,7 @@ class Global {
           'Contrary to popular belief, Lorem Ipsum is not simply random text. '
               'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
       'rate': '4 ⭐',
-      'charge': 10,
+      'charge': 1200,
     },
     {
       'name': 'Rahul jain',
@@ -402,7 +402,7 @@ class Global {
           'Contrary to popular belief, Lorem Ipsum is not simply random text. '
               'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
       'rate': '4 ⭐',
-      'charge': 10,
+      'charge': 900,
     },
     {
       'name': 'Matheus Ferraro',
@@ -412,7 +412,7 @@ class Global {
           'Contrary to popular belief, Lorem Ipsum is not simply random text. '
               'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
       'rate': '4 ⭐',
-      'charge': 10,
+      'charge': 600,
     },
     {
       'name': 'Rose Gonzalez',
@@ -422,7 +422,7 @@ class Global {
           'Contrary to popular belief, Lorem Ipsum is not simply random text. '
               'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
       'rate': '4 ⭐',
-      'charge': 10,
+      'charge': 770,
     },
     {
       'name': 'May Gauthier',
@@ -432,7 +432,7 @@ class Global {
           'Contrary to popular belief, Lorem Ipsum is not simply random text. '
               'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
       'rate': '4 ⭐',
-      'charge': 10,
+      'charge': 550,
     },
     {
       'name': 'Toa heftily',
@@ -452,7 +452,7 @@ class Global {
           'Contrary to popular belief, Lorem Ipsum is not simply random text. '
               'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
       'rate': '4 ⭐',
-      'charge': 10,
+      'charge': 650,
     },
     {
       'name': 'Christ Carn',
@@ -462,9 +462,11 @@ class Global {
           'Contrary to popular belief, Lorem Ipsum is not simply random text. '
               'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
       'rate': '4 ⭐',
-      'charge': 10,
+      'charge': 850,
     },
   ];
+
+  static List myOrder = [];
   static List<Map<String, dynamic>> orderService = [];
   static GlobalKey<FormState> buyNowKey = GlobalKey<FormState>();
   static String email = '',

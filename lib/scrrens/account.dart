@@ -5,6 +5,8 @@ import 'package:home_service/scrrens/variable.dart';
 import 'package:home_service/util/widget.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
+import 'order.dart';
+
 class Account extends StatefulWidget {
   const Account({Key? key}) : super(key: key);
 
@@ -119,7 +121,15 @@ class _AccountState extends State<Account> {
                 Curves.linear;
               });
             }),
-        listTile(icons: Icons.store, title: "My Order", ontap: () {}),
+        listTile(
+            icons: Icons.store,
+            title: "My Order",
+            ontap: () {
+              setState(() {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyOrder()));
+              });
+            }),
         listTile(
             icons: Icons.feedback,
             title: "Feedback",
@@ -235,6 +245,35 @@ class _FeedBackState extends State<FeedBack> {
       commentHint: 'Set your custom comment hint',
       onCancelled: () => print('cancelled'),
       onSubmitted: (response) {},
+    );
+  }
+}
+
+class MyOrder extends StatefulWidget {
+  const MyOrder({Key? key}) : super(key: key);
+
+  @override
+  State<MyOrder> createState() => _MyOrderState();
+}
+
+class _MyOrderState extends State<MyOrder> {
+  @override
+  Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
+    return Scaffold(
+      appBar: AppBar(
+        leading: GestureDetector(
+            onTap: () {
+              setState(() {
+                Navigator.pop(context);
+              });
+            },
+            child: Icon(Icons.arrow_back_ios_new)),
+        title: Text("My Order"),
+        centerTitle: true,
+      ),
+      body: Order(),
     );
   }
 }
