@@ -28,7 +28,6 @@ class _LoginPageState extends State<LoginPage> {
   Future getFuture() {
     return Future(() async {
       await Future.delayed(Duration(seconds: 2));
-      return 'Hello, Future Progress Dialog!';
     });
   }
 
@@ -95,25 +94,13 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(height: 100),
-                (Platform.isIOS)
-                    ? Icon(
-                        Icons.apple,
-                        size: 100,
-                      )
-                    : Icon(
-                        Icons.android,
-                        size: 100,
-                      ),
-                // hello again
-                Text(
-                  'HELLO!',
-                  style: GoogleFonts.bebasNeue(
-                      fontSize: 48,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 2),
+                Image.asset(
+                  'image/logo/homelogo.png',
+                  height: 120,
                 ),
 
-                // you been missed
+                const SizedBox(height: 10),
+
                 Text(
                   'Welcome back you\'ve been missed',
                   style: TextStyle(color: Colors.grey[700], fontSize: 16),

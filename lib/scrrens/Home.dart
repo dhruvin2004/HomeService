@@ -205,7 +205,7 @@ class _HomeState extends State<Home> {
                           ),
                           child: Row(
                             children: <Widget>[
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Text(
@@ -217,6 +217,7 @@ class _HomeState extends State<Home> {
                                 width: 20,
                               ),
                               CircleAvatar(
+                                backgroundColor: Colors.grey.shade400,
                                 backgroundImage: AssetImage(
                                   e['SerImage'],
                                 ),

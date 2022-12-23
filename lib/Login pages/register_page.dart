@@ -62,15 +62,12 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(height: 100),
-                (Platform.isIOS)
-                    ? const Icon(
-                        Icons.apple,
-                        size: 100,
-                      )
-                    : const Icon(
-                        Icons.android,
-                        size: 100,
-                      ),
+                Image.asset(
+                  'image/logo/homelogo.png',
+                  height: 120,
+                ),
+
+                const SizedBox(height: 10),
                 // hello again
                 Text(
                   'HELLO There!',
